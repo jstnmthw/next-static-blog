@@ -60,7 +60,7 @@ function getData() {
 export default function Page() {
   const posts = getData();
   return (
-    <>
+    <div className="py-24 sm:py-32 px-10 sm:px-15">
       <div className="flex justify-between">
         <div>
           <h2 className="text-3xl text-balance font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -75,6 +75,6 @@ export default function Page() {
       </div>
       <Posts posts={posts} />
       <Footer />
-    </>
+    </div>
   );
 }
