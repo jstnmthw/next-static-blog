@@ -105,7 +105,7 @@ export function PaginationPage({
       plain
       aria-label={`Page ${children}`}
       aria-current={current ? 'page' : undefined}
-      className={clsx(
+      className={classNames(
         'min-w-[2.25rem] before:absolute before:-inset-px before:rounded-lg',
         current && 'before:bg-zinc-950/5 dark:before:bg-white/10',
       )}

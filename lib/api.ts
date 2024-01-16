@@ -52,13 +52,44 @@ export function getAllPosts(
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
     .slice(start, end);
 
+  const lastPage = Math.ceil(total / limit);
+  const minPage = 1;
+  const maxPage = 5;
+  const currentPage = page;
+
+  let links = [];
+  for (let i = 1; i <= lastPage; i++) {
+    links.push(i);
+  }
+
+  // If there are more than maxPage pages, we need to truncate the links
+  if (links.length > maxPage) {
+    if (currentPage <= 3) {
+      // Current page near the start
+      links = [...links.slice(0, maxPage), '...', lastPage];
+    } else if (currentPage > 3 && currentPage < lastPage - 2) {
+      // Current page somewhere in the middle
+      links = [
+        minPage,
+        '...',
+        ...links.slice(currentPage - 2, currentPage + 1),
+        '...',
+        lastPage,
+      ];
+    } else {
+      // Current page near the end
+      links = [minPage, '...', ...links.slice(-maxPage)];
+    }
+  }
+
   return {
     data: posts,
     paginatorInfo: {
       total,
       currentPage: page,
       perPage: limit,
-      lastPage: Math.ceil(total / limit),
+      lastPage,
+      links,
     },
   };
 }
