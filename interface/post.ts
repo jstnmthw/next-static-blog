@@ -1,6 +1,6 @@
 import type Author from './author';
 
-type IPost = {
+type PostType = {
   slug: string;
   title: string;
   date: string;
@@ -14,4 +14,4 @@ type IPost = {
   content: string;
 };
 
-export default IPost;
+export default PostType;

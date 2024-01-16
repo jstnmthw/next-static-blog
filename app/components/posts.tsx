@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import PostType from '@/interface/post';
-import DateFormatter from './DateFormatter';
+import DateFormatter from './date-formatter';
 
 const Posts: FC<{ posts: PostType[] }> = ({ posts }) => {
   return (

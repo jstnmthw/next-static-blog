@@ -1,11 +1,12 @@
-import ScribbleIcon from '@/app/components/icons/ScribbleIcon';
+import ScribbleIcon from '@/app/components/icons/scribble-icon';
 import { getAllPosts } from '@/lib/api';
-import Posts from './components/Posts';
-import Footer from './components/Footer';
+import Posts from './components/posts';
+import Footer from './components/footer';
 
 function getData() {
-  const posts = getAllPosts([
+  const posts = getAllPosts(1, 1, [
     'title',
+    'categories',
     'date',
     'slug',
     'author',
@@ -36,7 +37,10 @@ export default function Page() {
         </div>
         <ScribbleIcon className="w-36 text-balance" />
       </div>
-      <Posts posts={posts} />
+      <pre className="font-sans p-5 bg-gray-100 overflow-scroll my-10">
+        {JSON.stringify(posts, null, 2)}
+      </pre>
+      <Posts posts={posts.data} />
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import fs from 'fs';
-import { join } from 'path';
 import matter from 'gray-matter';
-import PostType from '@/interface/post'; // Import the PostType interface
+import { join } from 'path';
+import PostType from '@/interface/post';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
@@ -20,8 +20,6 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostType {
   };
 
   const items: Items = {};
-
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug;
@@ -36,14 +34,31 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostType {
   });
 
   const itemsUnknown = items as unknown;
-  return itemsUnknown as PostType; // Cast items as PostType
+  return itemsUnknown as PostType;
 }
 
-export function getAllPosts(fields: string[] = []) {
+export function getAllPosts(
+  page: number = 1,
+  limit: number = 10,
+  fields: string[] = [],
+) {
+  const start = (page - 1) * limit;
+  const end = page * limit;
+
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  const allPosts = slugs.map((slug) => getPostBySlug(slug, fields));
+  const total = allPosts.length;
+  const posts = allPosts
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .slice(start, end);
+
+  return {
+    data: posts,
+    paginatorInfo: {
+      total,
+      currentPage: page,
+      perPage: limit,
+      lastPage: Math.ceil(total / limit),
+    },
+  };
 }

@@ -6,9 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tsc": "tsc --noEmit"
   },
   "dependencies": {
+    "@headlessui/react": "^2.0.0-alpha.4",
     "classnames": "^2.5.1",
     "date-fns": "^3.2.0",
     "gray-matter": "^4.0.3",
