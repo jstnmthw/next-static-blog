@@ -25,7 +25,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white mx-auto max-w-7xl overflow-hidden pt-40 dark:bg-black">
+    <footer className="mx-auto max-w-7xl overflow-hidden pt-40">
       <nav
         className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
         aria-label="Footer"
@@ -34,7 +34,7 @@ export default function Footer() {
           <div key={item.name} className="pb-6">
             <a
               href={item.href}
-              className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+              className="text-sm leading-6 text-neutral-600 hover:text-neutral-900"
             >
               {item.name}
             </a>
@@ -46,14 +46,14 @@ export default function Footer() {
           <a
             key={item.name}
             href={item.href}
-            className="text-gray-400 hover:text-gray-500"
+            className="text-neutral-400 hover:text-neutral-500"
           >
             <span className="sr-only">{item.name}</span>
             <item.icon className="h-9 w-8" aria-hidden="true" />
           </a>
         ))}
       </div>
-      <p className="mt-10 text-center text-xs leading-5 text-gray-500">
+      <p className="mt-10 text-center text-xs leading-5 text-neutral-500">
         &copy; {new Date().getFullYear()} Justin.ly
         <br />
         All rights reserved.
