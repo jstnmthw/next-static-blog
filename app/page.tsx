@@ -38,6 +38,9 @@ export default function Page() {
         </div>
         <ScribbleIcon className="w-36 text-balance text-neutral-900 dark:text-neutral-100" />
       </div>
+      {/* <pre className="overflow-scroll mt-10 text-green-400 text-xs">
+        {JSON.stringify(posts, null, 2)}
+      </pre> */}
       <Posts
         posts={posts.data}
         className="mb-8 pb-16 border-b border-neutral-200 dark:border-neutral-800"
