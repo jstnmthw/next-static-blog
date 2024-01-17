@@ -1,6 +1,11 @@
 import type Author from './author';
 
-type PostType = {
+export type PostListType = {
+  data: PostType[];
+  paginatorInfo: PaginatorInfoType;
+};
+
+export type PostType = {
   slug: string;
   title: string;
   date: string;
@@ -14,4 +19,10 @@ type PostType = {
   content: string;
 };
 
-export default PostType;
+export type PaginatorInfoType = {
+  currentPage: number;
+  links: (string | number)[];
+  lastPage: number;
+  perPage: number;
+  total: number;
+};

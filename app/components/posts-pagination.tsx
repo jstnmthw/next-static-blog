@@ -7,19 +7,40 @@ import {
   PaginationPage,
   PaginationPrevious,
 } from './pagination';
+import { PaginatorInfoType } from '@/interface/post';
 
-const PostsPagination: FC<{ links: (number | string)[] }> = ({ links }) => {
+const PostsPagination: FC<{
+  paginatorInfo: PaginatorInfoType;
+  links: (number | string)[];
+}> = ({ links, paginatorInfo }) => {
   return (
     <Pagination>
-      <PaginationPrevious href="?page=2" />
+      {paginatorInfo.currentPage > 1 ? (
+        <PaginationPrevious href={'?page=' + (paginatorInfo.currentPage - 1)} />
+      ) : (
+        <PaginationPrevious />
+      )}
       <PaginationList>
-        {links.map((link) => (
-          <PaginationPage href={`?page=${link}`} key={link}>
-            {link.toString()}
-          </PaginationPage>
-        ))}
+        {links.map((link, idx) => {
+          if (link === '...') {
+            return <PaginationGap key={idx}></PaginationGap>;
+          }
+          return (
+            <PaginationPage
+              key={idx}
+              href={`?page=${link}`}
+              current={paginatorInfo.currentPage === link}
+            >
+              {link.toString()}
+            </PaginationPage>
+          );
+        })}
       </PaginationList>
-      <PaginationNext href="?page=4" />
+      {paginatorInfo.currentPage === paginatorInfo.lastPage ? (
+        <PaginationNext />
+      ) : (
+        <PaginationNext href={'?page=' + (paginatorInfo.currentPage + 1)} />
+      )}
     </Pagination>
   );
 };

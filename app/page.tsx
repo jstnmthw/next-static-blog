@@ -25,7 +25,7 @@ function getData() {
 export default function Page() {
   const posts = getData();
   return (
-    <div className="py-24 sm:py-32 px-10 sm:px-15">
+    <div className="pt-24 pb-16 sm:pt-32 px-10 sm:px-15">
       <div className="flex justify-between">
         <div>
           <h2 className="text-3xl text-balance font-bold tracking-tight text-neutral-900 sm:text-4xl dark:text-neutral-50">
@@ -45,7 +45,10 @@ export default function Page() {
         posts={posts.data}
         className="mb-8 pb-16 border-b border-neutral-200 dark:border-neutral-800"
       />
-      <PostsPagination links={posts.paginatorInfo.links} />
+      <PostsPagination
+        links={posts.paginatorInfo.links}
+        paginatorInfo={posts.paginatorInfo}
+      />
       <Footer />
     </div>
   );

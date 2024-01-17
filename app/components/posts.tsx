@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import PostType from '@/interface/post';
+import { Badge } from './badge';
+import { PostType } from '@/interface/post';
 import DateFormatter from './date-formatter';
 import classNames from 'classnames';
-import { Badge } from './badge';
 import Link from 'next/link';
 
 const Posts: FC<{ posts: PostType[]; className?: string }> = ({
@@ -22,12 +22,17 @@ const Posts: FC<{ posts: PostType[]; className?: string }> = ({
                 dateString={post.date}
                 className="text-neutral-600"
               />
-              {post.categories.map((category) => (
+              {post.categories.map((category: string) => (
                 <Link
                   key={category}
                   href={`/category/${category.toLowerCase()}`}
                 >
-                  <Badge className="text-neutral-600">{category}</Badge>
+                  <Badge
+                    color="green"
+                    className="border font-xs border-green-400/30"
+                  >
+                    {category}
+                  </Badge>
                 </Link>
               ))}
             </div>
