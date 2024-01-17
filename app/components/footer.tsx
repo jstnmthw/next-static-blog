@@ -25,7 +25,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white mx-auto max-w-7xl overflow-hidden pt-40">
+    <footer className="bg-white mx-auto max-w-7xl overflow-hidden pt-40 dark:bg-black">
       <nav
         className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
         aria-label="Footer"
