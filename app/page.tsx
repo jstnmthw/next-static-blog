@@ -4,8 +4,8 @@ import Posts from './components/posts';
 import Footer from './components/footer';
 import PostsPagination from './components/posts-pagination';
 
-function getData() {
-  const posts = getAllPosts(1, 1, [
+function getData(page: number = 1) {
+  const posts = getAllPosts(page, 1, [
     'title',
     'categories',
     'date',
@@ -22,8 +22,14 @@ function getData() {
   return posts;
 }
 
-export default function Page() {
-  const posts = getData();
+export default function Page({
+  params,
+  searchParams,
+}: {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const posts = getData(searchParams.page);
   return (
     <div className="pt-24 pb-16 sm:pt-32 px-10 sm:px-15">
       <div className="flex justify-between">
@@ -38,9 +44,6 @@ export default function Page() {
         </div>
         <ScribbleIcon className="w-36 text-balance text-neutral-900 dark:text-neutral-100" />
       </div>
-      {/* <pre className="overflow-scroll mt-10 text-green-400 text-xs">
-        {JSON.stringify(posts, null, 2)}
-      </pre> */}
       <Posts
         posts={posts.data}
         className="mb-8 pb-16 border-b border-neutral-200 dark:border-neutral-800"

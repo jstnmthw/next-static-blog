@@ -1,7 +1,7 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
-import { PostDataType } from '@/interface/post';
+import { PostType } from '@/interface/post';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
@@ -9,10 +9,7 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
-export function getPostBySlug(
-  slug: string,
-  fields: string[] = [],
-): PostDataType {
+export function getPostBySlug(slug: string, fields: string[] = []): PostType {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
@@ -37,7 +34,7 @@ export function getPostBySlug(
   });
 
   const itemsUnknown = items as unknown;
-  return itemsUnknown as PostDataType;
+  return itemsUnknown as PostType;
 }
 
 export function getAllPosts(
