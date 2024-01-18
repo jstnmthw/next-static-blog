@@ -6,7 +6,7 @@ date: '2024-01-18T04:20:00.322Z'
 categories:
   - Opinion
 author:
-  name: Joe Haddad
+  name: Justin Rivera
   picture: '/assets/blog/authors/joe.jpeg'
 ogImage:
   url: '/assets/blog/preview/cover.jpg'
