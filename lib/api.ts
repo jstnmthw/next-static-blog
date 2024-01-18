@@ -55,9 +55,6 @@ export function getAllPosts(
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
     .slice(start, end);
 
-  console.log(page);
-  console.log(start);
-
   let links = [];
   for (let i = 1; i <= lastPage; i++) {
     links.push(i);
