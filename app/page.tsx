@@ -23,13 +23,15 @@ function getData(page: number = 1) {
 }
 
 export default function Page({
-  params,
   searchParams,
 }: {
   params: { slug: string };
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const posts = getData(searchParams.page);
+  if (!searchParams.page) {
+    searchParams.page = '1';
+  }
+  const posts = getData(Number(searchParams.page));
   return (
     <div className="pt-24 pb-16 sm:pt-32 px-10 sm:px-15">
       <div className="flex justify-between">

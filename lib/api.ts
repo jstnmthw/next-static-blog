@@ -44,18 +44,19 @@ export function getAllPosts(
 ) {
   const start = (page - 1) * limit;
   const end = page * limit;
-
   const slugs = getPostSlugs();
   const allPosts = slugs.map((slug) => getPostBySlug(slug, fields));
   const total = allPosts.length;
-  const posts = allPosts
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-    .slice(start, end);
-
   const lastPage = Math.ceil(total / limit);
   const minPage = 1;
   const maxPage = 5;
   const currentPage = page;
+  const posts = allPosts
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
+    .slice(start, end);
+
+  console.log(page);
+  console.log(start);
 
   let links = [];
   for (let i = 1; i <= lastPage; i++) {
