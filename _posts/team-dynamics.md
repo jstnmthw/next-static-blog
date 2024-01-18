@@ -12,7 +12,7 @@ image:
   url: '/assets/blog/preview/cover.jpg'
 ---
 
-Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the challenges, **and failures**, that shape us.
+Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the and failures, that shape us.
 
 One distinct personality that caught my attention early on is the meticulous perfectionist, driven by an innate commitment to detail. While this individual's approach adds an elegant touch to our projects, it also led to occasional roadblocks, as an insistence on perfection sometimes clashed with the need for timely delivery.
 
