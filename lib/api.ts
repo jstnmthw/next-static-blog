@@ -1,14 +1,26 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import { join } from 'path';
-import { PostType } from '@/interface/post';
+import { PostListType, PostType } from '@/interface/post';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
+/**
+ * Get all post slugs
+ *
+ * @returns string[]
+ */
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory);
 }
 
+/**
+ * Get post by slug
+ *
+ * @param slug
+ * @param fields
+ * @returns PostType
+ */
 export function getPostBySlug(slug: string, fields: string[] = []): PostType {
   const realSlug = slug.replace(/\.md$/, '');
   const fullPath = join(postsDirectory, `${realSlug}.md`);
@@ -37,7 +49,29 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostType {
   return itemsUnknown as PostType;
 }
 
-export function getAllPosts(
+/**
+ * Get all posts and return them as list
+ *
+ * @param fields
+ * @returns PostType[]
+ */
+export function getAllPosts(fields: string[] = []): PostType[] {
+  const slugs = getPostSlugs();
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
+}
+
+/**
+ * Get all posts and return them paginated
+ *
+ * @param page
+ * @param limit
+ * @param fields
+ * @returns PostListType
+ */
+export function getPosts(
   page: number = 1,
   limit: number = 10,
   fields: string[] = [],
@@ -60,13 +94,10 @@ export function getAllPosts(
     links.push(i);
   }
 
-  // If there are more than maxPage pages, we need to truncate the links
   if (links.length > maxPage) {
     if (currentPage <= 3) {
-      // Current page near the start
       links = [...links.slice(0, maxPage), '...', lastPage];
     } else if (currentPage > 3 && currentPage < lastPage - 2) {
-      // Current page somewhere in the middle
       links = [
         minPage,
         '...',
@@ -75,7 +106,6 @@ export function getAllPosts(
         lastPage,
       ];
     } else {
-      // Current page near the end
       links = [minPage, '...', ...links.slice(-maxPage)];
     }
   }
@@ -89,5 +119,5 @@ export function getAllPosts(
       lastPage,
       links,
     },
-  };
+  } as PostListType;
 }

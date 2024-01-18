@@ -10,7 +10,7 @@ categories:
 author:
   name: Justin Mathew
   picture: '/assets/blog/authors/tim.jpeg'
-ogImage:
+image:
   url: '/assets/blog/hello-world/cover.jpg'
 ---
 

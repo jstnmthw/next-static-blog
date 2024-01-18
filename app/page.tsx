@@ -1,11 +1,11 @@
 import ScribbleIcon from '@/app/components/icons/scribble-icon';
-import { getAllPosts } from '@/lib/api';
+import { getPosts } from '@/lib/api';
 import Posts from './components/posts';
 import Footer from './components/footer';
 import PostsPagination from './components/posts-pagination';
 
 function getData(page: number = 1) {
-  const posts = getAllPosts(page, 2, [
+  const posts = getPosts(page, 2, [
     'title',
     'categories',
     'date',
@@ -33,7 +33,7 @@ export default function Page({
   }
   const posts = getData(Number(searchParams.page));
   return (
-    <div className="pt-24 pb-16 sm:pt-32 px-10 sm:px-15">
+    <div className="pt-24 sm:pt-32 px-10 sm:px-15">
       {searchParams.page === '1' && (
         <div className="flex justify-between sm:pb-12 sm:mb-12 border-b border-neutral-200 dark:border-neutral-800">
           <div>

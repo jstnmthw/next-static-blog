@@ -13,7 +13,7 @@ export type PostType = {
   categories: string[];
   author: Author;
   excerpt: string;
-  ogImage: {
+  image: {
     url: string;
   };
   content: string;

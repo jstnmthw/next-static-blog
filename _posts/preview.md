@@ -10,7 +10,7 @@ categories:
 author:
   name: Joe Haddad
   picture: '/assets/blog/authors/joe.jpeg'
-ogImage:
+image:
   url: '/assets/blog/preview/cover.jpg'
 ---
 

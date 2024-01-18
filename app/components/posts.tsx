@@ -38,10 +38,10 @@ const Posts: FC<{ posts: PostType[]; className?: string }> = ({
             </div>
             <div className="group relative">
               <h3 className="mt-3 text-lg font-semibold leading-6 text-neutral-900 group-hover:text-neutral-600 dark:text-neutral-300 dark:group-hover:text-neutral-100">
-                <a href={post.slug}>
+                <Link href={post.slug}>
                   <span className="absolute inset-0" />
                   {post.title}
-                </a>
+                </Link>
               </h3>
               <p className="mt-5 line-clamp-3 text-sm leading-6 text-neutral-600 dark:text-neutral-300">
                 {post.excerpt}

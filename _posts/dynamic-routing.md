@@ -10,7 +10,7 @@ categories:
 author:
   name: JJ Kasper
   picture: '/assets/blog/authors/jj.jpeg'
-ogImage:
+image:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 ---
 
