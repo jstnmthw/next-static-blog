@@ -11,7 +11,7 @@ const Posts: FC<{ posts: PostType[]; className?: string }> = ({
 }) => {
   return (
     <div className={classNames(className, 'mx-auto')}>
-      <div className="mt-10 space-y-16 border-t border-neutral-200 pt-10 sm:mt-16 sm:pt-16 dark:border-neutral-800">
+      <div className="space-y-16">
         {posts.map((post) => (
           <article
             key={post.slug}
