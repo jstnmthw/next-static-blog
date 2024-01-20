@@ -1,15 +1,15 @@
 ---
 title: 'Team Dynamics—a manager’s perspective.'
 excerpt: 'Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the challenges, _and failures_, that shape us.'
-coverImage: '/assets/blog/preview/cover.jpg'
+coverImage: '/images/crosswalk-in-japan.jpg'
 date: '2024-01-18T04:20:00.322Z'
 categories:
   - Opinion
 author:
   name: Justin Rivera
   picture: '/assets/blog/authors/joe.jpeg'
-image:
-  url: '/assets/blog/preview/cover.jpg'
+ogImage:
+  url: '/public/images/crosswalk-in-japan.jpg'
 ---
 
 Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the and failures, that shape us.
