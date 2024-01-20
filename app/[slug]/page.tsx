@@ -5,6 +5,8 @@ import { PostBody } from './components/post-body';
 import DateFormatter from '../components/date-formatter';
 import Footer from '../components/footer';
 import Image from 'next/image';
+import { Badge } from '../components/badge';
+import Link from 'next/link';
 
 type Params = {
   params: {
@@ -16,15 +18,27 @@ export default async function Post({ params }: Params) {
   const post = await getPost({ params });
   return (
     <>
-      <article className="max-w-xl mx-auto relative">
-        <h1 className="text-4xl text-balance tracking-tight font-bold mt-20 mb-8 pb-10 border-b border-neutral-100 dark:border-neutral-800">
-          {post.title}
-        </h1>
-        <DateFormatter
-          dateString={post.date}
-          className="pb-5 block dark:text-neutral-500"
-        />
-        <figure className="mb-5">
+      <article>
+        <div className="max-w-xl mx-auto mt-20 mb-10 pb-10">
+          <h1 className="text-4xl text-balance tracking-tight font-bold mb-6">
+            {post.title}
+          </h1>
+          <DateFormatter
+            dateString={post.date}
+            className="pb-5 block dark:text-neutral-500 text-sm"
+          />
+          {post.categories.map((category: string) => (
+            <Link key={category} href={`/category/${category.toLowerCase()}`}>
+              <Badge
+                color="green"
+                className="border font-xs border-green-400/30"
+              >
+                {category}
+              </Badge>
+            </Link>
+          ))}
+        </div>
+        <figure className="mb-32 max-w-5xl mx-auto">
           <Image
             src={post.coverImage}
             alt={post.title}
@@ -59,6 +73,7 @@ async function getPost({ params }: Params): Promise<PostType> {
     'author',
     'content',
     'coverImage',
+    'categories',
   ]);
   const content = await markdownToHtml(post.content || '');
 
