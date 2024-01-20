@@ -33,7 +33,7 @@ export default function Page({
   }
   const posts = getData(Number(searchParams.page));
   return (
-    <div className="pt-24 sm:pt-32 px-10 sm:px-15">
+    <div className="pt-24 sm:pt-32 px-10 sm:px-15 mx-auto max-w-2xl">
       {searchParams.page === '1' && (
         <div className="flex justify-between sm:pb-12 sm:mb-12 border-b border-neutral-200 dark:border-neutral-800">
           <div>
