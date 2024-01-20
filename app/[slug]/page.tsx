@@ -20,12 +20,12 @@ export default async function Post({ params }: Params) {
     <>
       <article>
         <div className="max-w-xl mx-auto mt-20 mb-10 pb-10">
-          <h1 className="text-4xl text-balance tracking-tight font-bold mb-6">
+          <h1 className="text-4xl text-neutral-900 dark:text-neutral-50 text-balance tracking-tight font-bold mb-6">
             {post.title}
           </h1>
           <DateFormatter
             dateString={post.date}
-            className="pb-5 block dark:text-neutral-500 text-sm"
+            className="pb-5 block text-neutral-500 text-sm"
           />
           {post.categories.map((category: string) => (
             <Link key={category} href={`/category/${category.toLowerCase()}`}>
@@ -46,7 +46,7 @@ export default async function Post({ params }: Params) {
             height={684}
             className="mb-2"
           />
-          <figcaption className="text-xs text-neutral-500 dark:text-neutral-600 italic text-right">
+          <figcaption className="text-xs pr-2 text-neutral-400 dark:text-neutral-600 italic text-right">
             Image by{' '}
             <a href="https://unsplash.com/@ryoji__iwata">Ryoji Iwata</a>
           </figcaption>
