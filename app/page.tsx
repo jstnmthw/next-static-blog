@@ -1,7 +1,6 @@
 import ScribbleIcon from '@components/icons/scribble-icon';
 import { getPosts } from '@/lib/api';
 import Posts from './components/posts';
-import Footer from './components/footer';
 import PostsPagination from './components/posts-pagination';
 
 function getData(page: number = 1) {
