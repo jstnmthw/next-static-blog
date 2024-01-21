@@ -1,5 +1,6 @@
 services:
   web:
+    container_name: web
     image: node:latest
     ports:
       - '80:3000'
@@ -8,4 +9,4 @@ services:
     working_dir: /app
     environment:
       - NODE_ENV=production
-    command: npm run build && npm run start
+    command: sh -c 'npm run build && npm run start'
