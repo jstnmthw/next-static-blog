@@ -1,28 +1,34 @@
 import type Author from './author';
 
-export type PostListType = {
+export interface PostListType {
   data: PostType[];
   paginatorInfo: PaginatorInfoType;
-};
+}
 
-export type PostType = {
+export interface PostType {
   slug: string;
   title: string;
   date: string;
-  coverImage: string;
+  coverImage: {
+    url: string;
+    author: {
+      name: string;
+      url: string;
+    };
+  };
   categories: string[];
   author: Author;
   excerpt: string;
-  image: {
+  ogImage: {
     url: string;
   };
   content: string;
-};
+}
 
-export type PaginatorInfoType = {
+export interface PaginatorInfoType {
   currentPage: number;
   links: (string | number)[];
   lastPage: number;
   perPage: number;
   total: number;
-};
+}

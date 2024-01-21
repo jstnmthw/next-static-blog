@@ -56,7 +56,6 @@ export default function Page({
         links={posts.paginatorInfo.links}
         paginatorInfo={posts.paginatorInfo}
       />
-      <Footer />
     </div>
   );
 }

@@ -1,7 +1,11 @@
 ---
 title: 'Team Dynamics—a manager’s perspective.'
 excerpt: 'Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the challenges, _and failures_, that shape us.'
-coverImage: '/images/crosswalk-in-japan.jpg'
+coverImage:
+  url: '/images/crosswalk-in-japan.jpg'
+  author:
+    name: Ryoji Iwata
+    url: https://unsplash.com/@ryoji__iwata
 date: '2024-01-18T04:20:00.322Z'
 categories:
   - Opinion
@@ -12,7 +16,7 @@ ogImage:
   url: '/public/images/crosswalk-in-japan.jpg'
 ---
 
-Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the failures, that shape us.
+The responsibilities of leadership go beyond project timelines and deliverables. Leading a team involves navigating the subtle interplay of personalities—delving into the intricacies of human dynamics within the team. It's a journey marked not only by successes but also by the failures that shape us.
 
 ## All wakes of life
 
@@ -30,10 +34,10 @@ These observations became the foundation for creating an environment where chall
 
 > While we may possess the vision of solitary dreamers, it is through the patient collaboration of many that we bring those dreams into the light of reality.
 >
-> \- Neil deGrasse Tyson
+> —Neil deGrasse Tyson
 
 In the intricate dance of team dynamics, where innovation is constant, the importance of recognizing both strengths and weaknesses cannot be overstated. It's in the delicate balance of personalities, the interplay of skills, and the shared moments of overcoming challenges that the true magic of team collaboration unfolds.
 
 ## Smells like team spirit
 
-So—here's to the richness of diverse personalities—the art of acknowledging imperfections, and the symphony of personalities that harmonize not just in successes but in the collective journey of growth. It's not just about steering projects; it's about orchestrating a collective journey where challenges become stepping stones, and the code we write reflects the spirit of the team.
+So—here's to the richness of diverse personalities—the art of acknowledging imperfections, and the synergy of characters that blend not just in successes but in the collective journey of growth. It's not just about steering projects, it's about orchestrating a collective journey where challenges become stepping stones, and the code we write reflects the spirit of the team.
