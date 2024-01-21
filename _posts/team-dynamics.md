@@ -1,5 +1,5 @@
 ---
-title: 'Team Dynamics—a manager’s perspective.'
+title: 'Team Dynamics—a manager’s perspective'
 excerpt: 'Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the challenges, _and failures_, that shape us.'
 coverImage:
   url: '/images/crosswalk-in-japan.jpg'

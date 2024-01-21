@@ -1,5 +1,5 @@
-import { FC } from 'react';
 import Image from 'next/image';
+import { FC } from 'react';
 import { PostType } from '@/interface/post';
 
 const PostImage: FC<{ image: PostType['coverImage']; alt?: string }> = ({

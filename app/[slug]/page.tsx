@@ -1,9 +1,10 @@
 import { getPostBySlug, getAllPosts } from '@/lib/api';
-import { PostBody } from '@/app/components/post-body';
 import { PostType } from '@/interface/post';
 import markdownToHtml from '@/lib/markdownToHtml';
-import PostImage from '@/app/components/post-image';
-import PostHeader from '@/app/components/post-header';
+import PostImage from '@components/post-image';
+import PostHeader from '@components/post-header';
+import PostBody from '@components/post-body';
+import PostAuthor from '../components/post-author';
 
 type Params = {
   params: {
@@ -18,6 +19,7 @@ export default async function Post({ params }: Params) {
       <PostHeader post={post} />
       <PostImage image={post.coverImage} alt={post.title} />
       <PostBody content={post.content} />
+      <PostAuthor author={post.author} className="max-w-xl pt-10 mx-auto" />
     </article>
   );
 }

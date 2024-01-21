@@ -4,7 +4,7 @@ import {
 } from '@headlessui/react';
 import { clsx } from 'clsx';
 import React from 'react';
-import { Link } from '@/app/components/link';
+import { Link } from '@components/link';
 
 const styles = {
   base: [
