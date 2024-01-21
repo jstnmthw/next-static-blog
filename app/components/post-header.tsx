@@ -9,11 +9,8 @@ const PostHeader: FC<{ post: PostType }> = ({ post }) => {
       <h1 className="text-4xl text-neutral-900 dark:text-neutral-50 text-balance tracking-tight font-bold mb-6">
         {post.title}
       </h1>
-      <div className="flex items-center gap-x-4 text-xs">
-        <DateFormatter
-          dateString={post.date}
-          className="text-neutral-500 text-sm"
-        />
+      <div className="flex items-center gap-x-4 text-sm">
+        <DateFormatter dateString={post.date} className="text-neutral-500" />
         <PostCategories categories={post.categories} />
       </div>
     </div>
