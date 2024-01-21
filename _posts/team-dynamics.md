@@ -18,7 +18,7 @@ ogImage:
 
 The responsibilities of leadership go beyond project timelines and deliverables. Leading a team involves navigating the subtle interplay of personalities—delving into the intricacies of human dynamics within the team. It's a journey marked not only by successes but also by the failures that shape us.
 
-## All wakes of life
+## All walks of life
 
 One distinct personality that caught my attention early on is the meticulous perfectionist, driven by an innate commitment to detail. While this individual's approach adds an elegant touch to our projects, it also led to occasional roadblocks, as an insistence on perfection sometimes clashed with the need for timely delivery.
 
