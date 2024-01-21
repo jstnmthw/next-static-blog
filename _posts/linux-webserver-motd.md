@@ -18,16 +18,31 @@ ogImage:
   url: '/public/images/crosswalk-in-japan.jpg'
 ---
 
-## Installing motd on linux
+Have you ever logged into your Linux server and wished for a more informative and stylish welcome message? The Message of the Day (MOTD) is the first thing you see when connecting to your server via SSH, and with a few simple steps, you can customize it to display essential system information in a visually appealing manner.
 
-The existing motd file is usually located in `/etc/motd`. You can view the current motd with the following command:
+## Remove existing motd's (optional)
+
+Remove execution of the existing update-motd sections, leaving required updates and system reboot.
 
 ```sh
-cat /etc/motd
+sudo chmod -x /etc/update-motd.d/*
+sudo rm /etc/update-motd.d/*landscape*
+sudo chmod +x /etc/update-motd.d/*updates-available
+sudo chmod +x /etc/update-motd.d/*reboot-required
 ```
 
-Empty this motd if you only want the new customized motd.
+The existing motd file is usually located in `/etc/motd`. You can empty this motd if you only want the new customized motd:
 
 ```sh
 > /etc/motd
+```
+
+## Download &amp; install motd
+
+You can view the script [here](https://raw.githubusercontent.com/jstnmthw/webserver-spot-instance/master/motd.sh), which is a part of a repo that can be used as AWS Spot Instance linux web server.
+
+```sh
+curl -s https://raw.githubusercontent.com/jstnmthw/webserver-spot-instance/master/motd.sh > /tmp/motd.sh
+chmod +x /tmp/motd.sh
+sudo mv /tmp/motd.sh /etc/update-motd.d/00-motd
 ```

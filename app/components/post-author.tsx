@@ -13,7 +13,7 @@ const PostAuthor: FC<{ author: Author; className?: string }> = ({
         'relative mt-8 flex items-center gap-x-4',
       )}
     >
-      <div className="h-10 w-10 rounded-full bg-neutral-100 flex items-center justify-center text-center dark:bg-neutral-800">
+      <div className="h-9 w-9 rounded-full border-transparent border dark:border-neutral-700 bg-neutral-100 flex items-center justify-center text-center dark:bg-neutral-950">
         <span className="text-lg select-none font-medium leading-none text-neutral-500 dark:text-neutral-400">
           {author.name[0]}
         </span>

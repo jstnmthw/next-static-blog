@@ -7,12 +7,12 @@ const PostImage: FC<{ image: PostType['coverImage']; alt?: string }> = ({
   alt,
 }) => {
   return (
-    <figure className="mb-32 max-w-5xl mx-auto">
+    <figure className="mb-16 max-w-5xl mx-auto">
       <Image
         src={image.url}
         alt={alt ?? ''}
         width={1024}
-        height={684}
+        height={500}
         className="mb-2"
       />
       <figcaption className="text-xs pr-2 text-neutral-400 dark:text-neutral-600 italic text-right">

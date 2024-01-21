@@ -19,7 +19,6 @@ export default async function Post({ params }: Params) {
       <PostHeader post={post} />
       <PostImage image={post.coverImage} alt={post.title} />
       <PostBody content={post.content} />
-      <PostAuthor author={post.author} className="max-w-xl pt-10 mx-auto" />
     </article>
   );
 }
