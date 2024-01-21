@@ -1,12 +1,27 @@
-name: CI/CD Pipeline for Blog
+name: CI/CD Pipeline
 
 on:
   push:
     branches:
       - main
+        jobs:
+          - test
+          - build
+  pull_request:
+    branches:
+      - main
+        jobs:
+          - test
+          - build
+  tag:
+    - v*
+    jobs:
+      - test
+      - build
+      - deploy
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +31,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
@@ -30,10 +45,42 @@ jobs:
       - name: Run Prettier check
         run: npx prettier --check .
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+  build:
+    runs-on: ubuntu-latest
 
-      - name: Deploy to remote server
-        run: rsync -avz --delete ./ git@webserver:/var/www/blog
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /var/www/blog
+            git pull
+            npm run stop
+            npm ci
+            npm run build
+            npm run start
