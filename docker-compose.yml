@@ -12,6 +12,7 @@ services:
     environment:
       - NODE_ENV=production
     command: sh -c 'npm run build && npm run start'
+    restart: unless-stopped
 
   nginx:
     image: nginx:1.23-alpine
@@ -24,6 +25,7 @@ services:
       - '443:443'
     depends_on:
       - nextjs
+    restart: unless-stopped
 
   certbot:
     image: certbot/certbot
@@ -31,3 +33,5 @@ services:
     volumes:
       - ./letsencrypt:/etc/letsencrypt
     command: certonly --nginx -d justin.ly
+    depends_on:
+      - nginx
