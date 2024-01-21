@@ -13,9 +13,9 @@ on:
     jobs:
       - test
       - build
-  tag:
-    types:
-      - created
+  create:
+    tags:
+      - v*
     jobs:
       - test
       - build
