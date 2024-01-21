@@ -4,15 +4,15 @@ on:
   push:
     branches:
       - main
-        jobs:
-          - test
-          - build
+    jobs:
+      - test
+      - build
   pull_request:
     branches:
       - main
-        jobs:
-          - test
-          - build
+    jobs:
+      - test
+      - build
   tag:
     - v*
     jobs:
