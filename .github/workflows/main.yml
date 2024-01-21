@@ -7,12 +7,14 @@ on:
     jobs:
       - test
       - build
+
   pull_request:
     branches:
       - main
     jobs:
       - test
       - build
+
   create:
     tags:
       - v*
@@ -26,10 +28,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: 19
 
       - name: Install dependencies
         run: npm ci
@@ -47,10 +52,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: 19
 
       - name: Install dependencies
         run: npm ci
@@ -62,6 +70,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
