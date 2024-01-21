@@ -8,5 +8,4 @@ services:
     working_dir: /app
     environment:
       - NODE_ENV=production
-    command: |
-      npm run start
+    command: npm run build && npm run start
