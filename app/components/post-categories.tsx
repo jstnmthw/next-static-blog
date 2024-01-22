@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { FC } from 'react';
 import { Badge } from './badge';
 
@@ -6,7 +5,6 @@ const PostCategories: FC<{ categories: string[] }> = ({ categories }) => {
   return (
     <div className="flex items-center gap-x-2 text-xs">
       {categories.map((category: string) => (
-        // <Link key={category} href={`/category/${category.toLowerCase()}`}>
         <Badge
           key={category}
           color="green"
@@ -14,7 +12,6 @@ const PostCategories: FC<{ categories: string[] }> = ({ categories }) => {
         >
           {category}
         </Badge>
-        // </Link>
       ))}
     </div>
   );
