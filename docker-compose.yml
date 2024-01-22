@@ -19,7 +19,8 @@ services:
     container_name: nginx
     volumes:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./.certbot/conf:/etc/letsencrypt:ro
+      - ./.certbot/www:/var/www/certbot:ro
     ports:
       - '80:80'
       - '443:443'
@@ -28,11 +29,12 @@ services:
     restart: unless-stopped
 
   certbot:
+    tty: true
     image: certbot/certbot:latest
     container_name: certbot
     volumes:
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
-    command: certonly --nginx -d justin.ly
+      - ./.certbot/conf:/etc/letsencrypt
+      - ./.certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --agree-tos --no-eff-email --email webmaster@justin.ly -d justin.ly
     depends_on:
       - nginx

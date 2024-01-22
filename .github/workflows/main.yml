@@ -44,7 +44,7 @@ jobs:
       - name: Run Prettier check
         run: npx prettier --check .
 
-      - name: Build 🚀
+      - name: Build
         run: npm run build
 
   deploy:
@@ -64,4 +64,4 @@ jobs:
           script: |
             cd /var/www/blog
             git pull
-            docker-compose up -d --build
+            docker-compose down && docker-compose up -d
