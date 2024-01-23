@@ -1,6 +1,6 @@
 ---
 title: 'Linux motd displaying resources on your web server'
-excerpt: 'Managing a team is a nuanced dance of personalities. The role of managing extends beyond project timelines and deliverables, delving into the intricacies of human dynamics within the team—a journey marked not only by successes but also by the challenges, _and failures_, that shape us.'
+excerpt: 'Have you ever logged into your Linux server and wished for a more informative and stylish welcome message? The Message of the Day (MOTD) is the first thing you see when connecting to your server via SSH, this script will customize it to display essential system information in a visually appealing manner.'
 coverImage:
   url: '/images/linux-webserver-motd.jpg'
   author:
@@ -18,7 +18,7 @@ ogImage:
   url: '/public/images/crosswalk-in-japan.jpg'
 ---
 
-Have you ever logged into your Linux server and wished for a more informative and stylish welcome message? The Message of the Day (MOTD) is the first thing you see when connecting to your server via SSH, and with a few simple steps, you can customize it to display essential system information in a visually appealing manner.
+Have you ever logged into your Linux server and wished for a more informative and stylish welcome message? The Message of the Day (MOTD) is the first thing you see when connecting to your server via SSH, this script will customize it to display essential system information in a visually appealing manner.
 
 ## Remove existing motd's (optional)
 
