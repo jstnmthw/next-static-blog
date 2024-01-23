@@ -40,4 +40,4 @@ In the intricate dance of team dynamics, where innovation is constant, the impor
 
 ## Smells like team spirit
 
-So—here's to the richness of diverse personalities—the art of acknowledging imperfections, and the synergy of characters that blend not just in successes but in the collective journey of growth. It's not just about steering projects, it's about orchestrating a collective journey where challenges become stepping stones, and the code we write reflects the spirit of the team.
+So—here's to the richness of diverse personalities—the art of acknowledging imperfections, and the synergy of characters that blend not just in successes but in the collective voyage of growth. It's not just about steering projects, it's about orchestrating a collective experience where challenges become stepping stones, and the code we write reflects the spirit of the team.
