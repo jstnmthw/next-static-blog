@@ -1,6 +1,6 @@
 ---
 title: 'Team Dynamics—a manager’s perspective'
-excerpt: 'The responsibilities of leadership go beyond project timelines and deliverables. Leading a team involves navigating the subtle interplay of personalities—delving into the intricacies of human dynamics within the team. It's a journey marked not only by successes but also by the failures that shape us.'
+excerpt: 'The responsibilities of leadership go beyond project timelines and deliverables. Leading a team involves navigating the subtle interplay of personalities—delving into the intricacies of human dynamics within the team. It’s a journey marked not only by successes but also by the failures that shape us.'
 coverImage:
   url: '/images/crosswalk-in-japan.jpg'
   author:
