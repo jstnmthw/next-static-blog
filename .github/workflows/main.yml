@@ -64,4 +64,4 @@ jobs:
           script: |
             cd /var/www/blog
             git pull
-            docker-compose down && docker-compose up -d
+            docker-compose restart
