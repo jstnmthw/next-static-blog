@@ -99,6 +99,7 @@ export function getPosts(
   const maxPage = 5;
   const currentPage = page;
   const posts = allPosts
+    .filter((post): post is PostType => post !== null)
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
     .slice(start, end);
 
