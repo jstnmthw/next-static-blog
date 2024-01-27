@@ -69,7 +69,10 @@ export function getAllPosts(fields: string[] = []): PostType[] {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .filter((post): post is PostType => post !== null)
+    .sort((post1, post2) =>
+      (post1?.date ?? '') > (post2?.date ?? '') ? -1 : 1,
+    );
   return posts;
 }
 

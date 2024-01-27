@@ -43,12 +43,12 @@ async function getPost({ params }: Params): Promise<PostType | null> {
     'coverImage',
     'categories',
   ]);
-  const content = await markdownToHtml(post?.content || '');
 
   if (!post) {
     return null;
   }
 
+  const content = await markdownToHtml(post?.content || '');
   return {
     ...post,
     content,
