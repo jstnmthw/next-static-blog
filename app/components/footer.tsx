@@ -2,14 +2,14 @@ import { SVGProps } from 'react';
 
 const navigation = {
   main: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Projects', href: '#' },
+    { name: 'About', href: '/about' },
+    { name: 'Blog', href: '/' },
+    { name: 'Projects', href: '/projects' },
   ],
   social: [
     {
       name: 'GitHub',
-      href: '#',
+      href: 'https://github.com/jstnmthw',
       icon: (props: SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path

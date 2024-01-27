@@ -4,7 +4,7 @@ import markdownToHtml from '@/lib/markdownToHtml';
 import PostImage from '@components/post-image';
 import PostHeader from '@components/post-header';
 import PostBody from '@components/post-body';
-import PostAuthor from '../components/post-author';
+import { notFound } from 'next/navigation';
 
 type Params = {
   params: {
@@ -14,6 +14,9 @@ type Params = {
 
 export default async function Post({ params }: Params) {
   const post = await getPost({ params });
+  if (!post) {
+    return notFound();
+  }
   return (
     <article>
       <PostHeader post={post} />
@@ -30,7 +33,7 @@ export async function generateStaticParams() {
   }));
 }
 
-async function getPost({ params }: Params): Promise<PostType> {
+async function getPost({ params }: Params): Promise<PostType | null> {
   const post = getPostBySlug(params.slug, [
     'title',
     'date',
@@ -40,7 +43,11 @@ async function getPost({ params }: Params): Promise<PostType> {
     'coverImage',
     'categories',
   ]);
-  const content = await markdownToHtml(post.content || '');
+  const content = await markdownToHtml(post?.content || '');
+
+  if (!post) {
+    return null;
+  }
 
   return {
     ...post,
