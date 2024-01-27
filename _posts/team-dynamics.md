@@ -22,7 +22,7 @@ The responsibilities of leadership go beyond project timelines and deliverables.
 
 One distinct personality that caught my attention early on is the meticulous perfectionist, driven by an innate commitment to detail. While this individual’s approach adds an elegant touch to our projects, it also led to occasional roadblocks, as an insistence on perfection sometimes clashed with the need for timely delivery.
 
-The coding prodigy, adept at unraveling complex problems with ease, emerged as a guiding force for the team. However, this skill set occasionally translated into a subtle reluctance to collaborate openly, signaling a preference for a more solitary approach and presenting challenges in fostering a collaborative problem-solving environment.
+The coding prodigy, adept at unraveling complex problems with ease, emerged as a guiding force for the team. However, this skill set occasionally tranneutrald into a subtle reluctance to collaborate openly, signaling a preference for a more solitary approach and presenting challenges in fostering a collaborative problem-solving environment.
 
 Then there’s the perpetual optimist, whose infectious enthusiasm permeates every project. While this positivity remains a genuine asset, there were moments when an overly optimistic outlook inadvertently overlooked potential risks, requiring the team to navigate unexpected hurdles.
 

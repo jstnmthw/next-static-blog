@@ -107,7 +107,7 @@ export function PaginationPage({
       aria-current={current ? 'page' : undefined}
       className={classNames(
         'min-w-[2.25rem] before:absolute before:-inset-px before:rounded-lg',
-        current && 'before:bg-gray-950/5 dark:before:bg-white/10',
+        current && 'before:bg-neutral-950/5 dark:before:bg-white/10',
       )}
     >
       <span className="-mx-0.5">{children}</span>

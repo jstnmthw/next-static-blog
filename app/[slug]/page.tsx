@@ -5,6 +5,7 @@ import PostImage from '@components/post-image';
 import PostHeader from '@components/post-header';
 import PostBody from '@components/post-body';
 import { notFound } from 'next/navigation';
+import Footer from '../components/footer';
 
 type Params = {
   params: {
@@ -18,11 +19,14 @@ export default async function Post({ params }: Params) {
     return notFound();
   }
   return (
-    <article>
-      <PostHeader post={post} />
-      <PostImage image={post.coverImage} alt={post.title} />
-      <PostBody content={post.content} />
-    </article>
+    <>
+      <article>
+        <PostHeader post={post} />
+        <PostImage image={post.coverImage} alt={post.title} />
+        <PostBody content={post.content} />
+      </article>
+      <Footer />
+    </>
   );
 }
 

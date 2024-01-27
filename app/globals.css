@@ -6,4 +6,8 @@
   :root {
     @apply bg-white dark:bg-neutral-950 text-white dark:text-neutral-300;
   }
+  html,
+  body {
+    @apply h-full w-full;
+  }
 }
